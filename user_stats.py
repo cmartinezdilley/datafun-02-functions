@@ -1,5 +1,6 @@
 """
-
+Task 4- Module 2
+Christine Martinez
 This example illustrates basic analytics
 using just the built-in statistics module.
 
@@ -73,8 +74,31 @@ scores = [
     104,
 ]
 
+
 # univariant time series data (one varabile over time)
 # typically, x (or time) is independent and
 # y is dependent on x (e.g. temperature vs hour of day)
 x_times = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 y_temps = [2, 5, 8, 20, 21, 23, 24, 27, 30, 31, 31,32]
+
+#Calculate the agility scores
+mode= statistics.mode(scores)
+mean= statistics.mean(scores)
+median= statistics.median(scores)
+variance= statistics.variance(scores)
+standard_deviation=statistics.stdev(scores)
+
+print(f"The mode of the agility scores is {mode}.")
+print(f"The mean of the agility scores is {mean}.")
+print(f"The median of the agility scores is {median}.")
+print(f"The variance of the agility scores is {variance:.2f}. ")
+print(f"The standard deviation of the agility scores is {standard_deviation:.2f}. ")
+
+slope, intercept = statistics.linear_regression(x_times, y_temps)
+
+print(f"""The best fit line has a slope of {round(slope,2)} and intercept of {round(intercept, 2)}.""")
+
+#Slope and intercept- predicting the temp
+future_x=13
+future_y= slope*future_x+intercept
+print(f"""The temp at hour 13 will be {round(future_y,0)} degrees.""")

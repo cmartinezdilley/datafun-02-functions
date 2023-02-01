@@ -1,6 +1,6 @@
 """
-Always start with a docstring that describes what the module does.
-Include your name and the date.
+Module 2 Task 3- Christine Martinez 24Jan2023
+Functions that are related to cats. 
 
 Use built-in functions and 
 functions from the math module.
@@ -36,8 +36,13 @@ def get_area_of_lot(length, width):
 
 # define more functions here (see instuctions)
 
+def blackcat_avg(*blackcat):
+    """Return the number of black cats in each room of the shelter"""
+    return sum(blackcat)/len(blackcat)
 
-
+def cost_of_cat_food_per_room(friskies_cost, room_count):
+    """Returns the cost of friskies for each room in the cat shelter"""
+    return math.prod([friskies_cost*room_count])
 
 # -------------------------------------------------------------
 # Call some functions and execute code!
@@ -49,4 +54,12 @@ def get_area_of_lot(length, width):
 if __name__ == "__main__":
 
     # call your functions here (see instructions)
-    print("your code here")
+    print("Explore some functions in the math module")
+    print()
+    print(f"math.comb(5,1)={math.comb(5,1)}")
+    print(f"math.perm(5,1)=math{math,math.perm(5,1)}")
+
+    print(f"Average number of black cats= {blackcat_avg(5,6,7,8)}")
+    print()
+    print(f"Cost of cat food={cost_of_cat_food_per_room(20,30)}")
+    
